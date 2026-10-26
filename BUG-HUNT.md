@@ -11,8 +11,8 @@ Each snippet has at least one bug from Week 7. Under each one, write:
 {sales.map((sale, index) => <SaleRow key={index} sale={sale} />)}
 ```
 
-- What breaks, and for whom:
-- The fix:
+- What breaks, and for whom: When sales are inserted or removed react can use the wrong row which will show old infromation.
+- The fix: key={sale.id}
 
 ## 2
 
