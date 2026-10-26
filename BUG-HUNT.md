@@ -11,8 +11,8 @@ Each snippet has at least one bug from Week 7. Under each one, write:
 {sales.map((sale, index) => <SaleRow key={index} sale={sale} />)}
 ```
 
-- What breaks, and for whom:
-- The fix:
+- What breaks and for whom: Sales row breaks because of "/>"
+- The fix: {sales.map((sale, index) => <SaleRow key={index} sale={sale})}
 
 ## 2
 
@@ -22,9 +22,8 @@ useEffect(() => {
 }, [])
 ```
 
-- What breaks, and for whom:
-- The fix:
-
+- What breaks, and for whom: the date doesnt specifiy the date formate
+- The fix: DateAtUtc
 ## 3
 
 ```ts
@@ -33,7 +32,8 @@ localStorage.setItem('token', body.accessToken)
 ```
 
 - What breaks, and for whom:
-- The fix:
+- The fix: login page, youve reached the amount of times you canm attemp to login, either increase the access tokens or change password.
+
 
 ## 4
 
@@ -42,7 +42,7 @@ useQuery({ queryKey: ['products'], queryFn: () => getProducts(categoryId) })
 ```
 
 - What breaks, and for whom:
-- The fix:
+- The fix: 
 
 ## 5
 
@@ -51,8 +51,8 @@ useQuery({ queryKey: ['products'], queryFn: () => getProducts(categoryId) })
 const hasMore = page.nextPageToken !== ''
 ```
 
-- What breaks, and for whom:
-- The fix:
+- What breaks, and for whom: unable to go to the next page "!=="
+- The fix: specify the amount of page tokens , and must stop at null
 
 ## 6
 
@@ -60,8 +60,8 @@ const hasMore = page.nextPageToken !== ''
 const cents = parseFloat(form.price) * 100
 ```
 
-- What breaks, and for whom:
-- The fix:
+- What breaks, and for whom: cents not editable, wont be able to read text
+- The fix: const cents = BigInt(whole) * CENTS_PER_RAND + BigInt(fraction)
 
 ## 7
 
@@ -70,8 +70,8 @@ const save = useMutation({ mutationFn: createSale })
 <Button onClick={() => save.mutate(values)}>Save</Button>
 ```
 
-- What breaks, and for whom:
-- The fix:
+- What breaks, and for whom: for thw user, theres no create button
+- The fix: <Button onClick={() => create.mutate(values)}>Create</Button
 
 ## 8
 
@@ -79,5 +79,5 @@ const save = useMutation({ mutationFn: createSale })
 <span className="text-red-600">●</span>
 ```
 
-- What breaks, and for whom:
-- The fix:
+- What breaks, and for whom: 
+- The fix: Specify which className is red, is it a text, icon...
