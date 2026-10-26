@@ -60,8 +60,8 @@ const hasMore = page.nextPageToken !== ''
 const cents = parseFloat(form.price) * 100
 ```
 
-- What breaks, and for whom:
-- The fix:
+- What breaks, and for whom: It won't write thje pruice in decimal form like how a price usually is. The problem would be for the user because it won't be able to process the input correctly.
+- The fix: Using formCents instead of parseFloat
 
 ## 7
 
