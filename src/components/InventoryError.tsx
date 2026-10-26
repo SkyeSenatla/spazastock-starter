@@ -1,19 +1,19 @@
 import { AlertCircle, RefreshCcw } from 'lucide-react'
-import { ApiError, parseRetryAfter } from '@/api/clients'
+import { ApiError, parseRetryAfter } from '../api/clients'
 import { Button } from '@/components/ui/button'
 
 export function InventoryError({
-  error, onRetry, categoryProducts = false,
+  error,
+  onRetry,
+  categoryProducts = false,
 }: {
   error: unknown
   onRetry: () => void
   categoryProducts?: boolean
-}) 
-{
+}) {
   const apiError = error instanceof ApiError ? error : null
   const reference = apiError?.problem?.correlationId
   const retryAfter = parseRetryAfter(apiError?.retryAfter ?? null)
-
 
   let title = 'Unable to load stock'
   let message = 'Check your connection and try again.'
